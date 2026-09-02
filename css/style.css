@@ -223,7 +223,7 @@ div.color > *:not(.rayas):not(.rayas img):not(.headerInicio) {
 }
 
 .heroImage img {
-    width: min(55%, 480px);
+    width: min(50%, 480px);
     height: 430px;
     margin: 0;
     object-fit: cover;
