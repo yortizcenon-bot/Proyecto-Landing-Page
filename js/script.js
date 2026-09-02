@@ -1,11 +1,36 @@
+function mostrarOcultarMenu() {
+    const menu = document.getElementById("offcanvasMenu");
+    const overlay = document.getElementById("navOverlay");
+    const icon = document.getElementById("menuIcon");
+
+    menu.classList.toggle("open");
+    overlay.classList.toggle("active");
+
+    icon.classList.toggle("fa-bars");
+    icon.classList.toggle("fa-xmark");
+}
+
+function seleccionar() {
+    const menu = document.getElementById("offcanvasMenu");
+    const overlay = document.getElementById("navOverlay");
+    const icon = document.getElementById("menuIcon");
+
+    menu.classList.remove("open");
+    overlay.classList.remove("active");
+
+    icon.classList.add("fa-bars");
+    icon.classList.remove("fa-xmark");
+}
+
+
 // Páginas
 const pagWelcome = document.querySelector('.pageInicio')
 const pagInicio = document.querySelector('.container')
 const pagRegistro = document.querySelector('.containerReg')
 
 // Botones de la página principal
-const btnInicio = document.querySelector('.inBtn')
-const btnRegistro = document.querySelector('.regBtn')
+const btnInicio = document.querySelectorAll('.inBtn')
+const btnRegistro = document.querySelectorAll('.regBtn')
 
 // Mostrar la página de inicio de sesión
 function mostrarLogin() {
@@ -29,8 +54,13 @@ function mostrarRegistro() {
 }
 
 // Botones de la página principal
-btnInicio.addEventListener('click', mostrarLogin)
-btnRegistro.addEventListener('click', mostrarRegistro)
+btnInicio.forEach((btn) => {
+    btn.addEventListener('click', mostrarLogin)
+})
+
+btnRegistro.forEach((btn) => {
+    btn.addEventListener('click', mostrarRegistro)
+})
 
 // Botón de registro desde la página de inicio de sesión
 const btnReg = document.querySelector('.registrarBtn')
